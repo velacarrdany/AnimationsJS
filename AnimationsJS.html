@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Animation Examples</title>
+</head>
+
+<body style="background-color: black;">
+    <br>//Opacity animation example
+    <div id="cube1" style="background-color: yellow; width: 200px; height: 200px;">
+        <a>Hover to change my opacity</a>
+    </div>
+
+    <br> //Color animation example
+    <div id="cube2" style="background-color: red; width: 200px; height: 200px;">
+        <a>Hover to change color</a>
+    </div>
+
+    <br> //Rotation animation example
+    <div id="cube3" style="background-color: blue; width: 200px; height: 200px;">
+        <a>Hover to rotate me</a>
+    </div>
+
+    <br> //Movement animation example
+    <div id="cube4" style="background-color: green; width: 200px; height: 200px;">
+        <a>Hover to move</a>
+    </div>
+
+    <br> //Size animation example
+    <div id="cube5" style="background-color: purple; width: 200px; height: 200px;">
+        <a>Hover to change my size</a>
+    </div>
+</body>
+<script>
+    const cube1 = document.getElementById("cube1");
+    const cube2 = document.getElementById("cube2");
+    const cube3 = document.getElementById("cube3");
+    const cube4 = document.getElementById("cube4");
+    const cube5 = document.getElementById("cube5");
+
+    cube1.addEventListener("mouseover", opacidad);
+    cube2.addEventListener("mouseover", color);
+    cube3.addEventListener("mouseover", rotar);
+    cube4.addEventListener("mouseover", mover);
+    cube5.addEventListener("mouseover", tamano);
+
+    function opacidad() {
+        cube1.animate({
+            opacity: [1, 0, 1]
+        }, 2000);
+    }
+
+    function color() {
+        var doAnimation = cube2.animate({
+            backgroundColor: ["red", "green", "blue"]
+        }, 2000);
+    }
+
+    function rotar() {
+        var doAnimation = cube3.animate({
+            transform: ["rotate(360deg)"]
+        }, 2000);
+    }
+
+    function mover() {
+        var doAnimation = cube4.animate({
+            transform: ["translateX(200px)"]
+        }, 2000);
+    }
+
+    function tamano() {
+        var doAnimation = cube5.animate({
+            transform: ["scale(2)"],
+        }, 2000);
+    }
+</script>
+
+</html>
