@@ -37,37 +37,65 @@
     const cube4 = document.getElementById("cube4");
     const cube5 = document.getElementById("cube5");
 
-    cube1.addEventListener("mouseover", opacidad);
-    cube2.addEventListener("mouseover", color);
-    cube3.addEventListener("mouseover", rotar);
-    cube4.addEventListener("mouseover", mover);
-    cube5.addEventListener("mouseover", tamano);
+    cube1.addEventListener("mouseover", doOpacity);
+    cube2.addEventListener("mouseover", doColor);
+    cube3.addEventListener("mouseover", doRotation);
+    cube4.addEventListener("mouseover", doMovement);
+    cube5.addEventListener("mouseover", doSize);
 
-    function opacidad() {
+    const time = {
+        fill: "forwards",
+        duration: 2000
+    };
+
+    function doOpacity() {
         cube1.animate({
             opacity: [1, 0, 1]
         }, 2000);
     }
 
-    function color() {
+    function doColor() {
         var doAnimation = cube2.animate({
             backgroundColor: ["red", "green", "blue"]
         }, 2000);
     }
 
-    function rotar() {
+    const repetitions = {
+        duration: 4000,
+        fill: "forwards",
+        iterations: 3
+    }
+
+    function doRotation() {
         var doAnimation = cube3.animate({
             transform: ["rotate(360deg)"]
         }, 2000);
     }
 
-    function mover() {
-        var doAnimation = cube4.animate({
-            transform: ["translateX(200px)"]
-        }, 2000);
+    const anim = [{
+        transform: "translateX(0px)"
+    }, {
+        transform: "translateX(200px)"
+    }, {
+        transform: "translateX(-200px)"
+    }, {
+        transform: "translateX(0px)"
+    }];
+
+    const rep = {
+        duration: 4000,
+        iterations: 2,
+        fill: "forwards"
     }
 
-    function tamano() {
+    function doMovement() {
+        // var doAnimation = cube4.animate({
+        //     transform: ["translateX(200px)"]
+        // }, 2000);
+        var doAnimation = cube4.animate(anim, rep);
+    }
+
+    function doSize() {
         var doAnimation = cube5.animate({
             transform: ["scale(2)"],
         }, 2000);
