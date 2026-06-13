@@ -16,7 +16,7 @@
 <script>
     const text1 = document.querySelector("#text1");
 
-    // text1.addEventListener("click");
+    text1.addEventListener("click", color);
     text1.addEventListener("mouseover", augment);
     text1.addEventListener("mouseleave", diminish);
 
@@ -41,6 +41,14 @@
 
     function diminish() {
         var doAnimation = text1.animate(effectDim, time);
+    }
+
+    const effectColor = {
+        color: ["white", "red"]
+    };
+
+    function color() {
+        var doAnimation = text1.animate(effectColor, time);
     }
 </script>
 
