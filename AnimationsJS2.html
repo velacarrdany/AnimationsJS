@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Animation Examples</title>
+</head>
+
+<body style="background-color: black;">
+    <div style="text-align: center">
+        <h1 id="text1" style="color: white; opacity: 0.3;">Hello World!</h1>
+    </div>
+</body>
+
+<script>
+    const text1 = document.querySelector("#text1");
+
+    // text1.addEventListener("click");
+    text1.addEventListener("mouseover", augment);
+    text1.addEventListener("mouseleave", diminish);
+
+    const effectAug = {
+        transform: "scale(3)",
+        opacity: [0.3, 1]
+    };
+
+    const time = {
+        duration: 500,
+        fill: "forwards"
+    };
+
+    function augment() {
+        var doAnimation = text1.animate(effectAug, time);
+    }
+
+    const effectDim = {
+        transform: "scale(1)",
+        opacity: [1, 0.3]
+    }
+
+    function diminish() {
+        var doAnimation = text1.animate(effectDim, time);
+    }
+</script>
+
+</html>
