@@ -13,4 +13,9 @@ This is a file that shows five different cubes that when hovered, trigger the ne
 [File link](https://github.com/velacarrdany/AnimationsJS/blob/master/AnimationsJS.html)
 
 ## AnimationsJS2.html
-Coming soon...
+This file shows animations on a 'div'tag. These next three animations trigger:
+* When the mouse is over the tag, it changes opacity from 30% to 100% and gets 300% larger.
+* When the mouse hovers away from the tag, it goes back to 30% opacity, and goes back to its original size.
+* When the mouse clicks the tag, the text inside turns red, and if clicked again, flashes back to white, then to red, and stays red, for now.
+
+[File link](https://github.com/velacarrdany/AnimationsJS/blob/master/AnimationsJS2.html)
